@@ -19,7 +19,7 @@ class TestLambdas(unittest.TestCase):
     def test_sum_two_nums(self):
         self.assertEqual(self.sum_two_nums.__name__, self.l_string)
 
-        expeted = 4
+        expeted = 3
         actual = self.sum_two_nums(1, 2)
         self.assertEqual(expeted, actual)
 

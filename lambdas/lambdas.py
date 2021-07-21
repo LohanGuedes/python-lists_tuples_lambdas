@@ -20,26 +20,32 @@ def main():
 # ==============================================================
 # convert the functions below into Lambda / Anonymous functions
 # ==============================================================
-def myFunction():
-    print("My function was ran!")
 
+# def myFunction():
+#     print("My function was ran!")
 
-def myOtherFunction(param):
-    return param
+myFunction = lambda: print("My Function was ran!")
 
+# def myOtherFunction(param):
+#     return param
 
-def sum_two_nums(num1, num2):
-    return num1 + num2
+myOtherFunction = lambda param: param
 
+# def sum_two_nums(num1, num2):
+#     return num1 + num2
 
-def subtract_two_nums(x, y):
-    return x - y
+sum_two_nums = lambda num1, num2: num1 + num2
 
+# def subtract_two_nums(x, y):
+#     return x - y
+
+subtract_two_nums = lambda x, y: x - y
 
 # Extra
-def tripple_num(num):
-    return num * 3
+# def tripple_num(num):
+#     return num * 3
 
+tripple_num = lambda num: num * 3
 
 if __name__ == "__main__":
     main()
