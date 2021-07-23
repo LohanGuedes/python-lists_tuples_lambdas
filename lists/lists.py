@@ -178,7 +178,7 @@ def get_old_cars(cars_list):
 def find_bmw_and_audi(cars_list):
     bmw_and_audi = []
     for car in cars_list:
-        if car.get('car_make') == 'Audi' or 'BMW':
+        if car.get('car_make') == 'Audi' or car.get('car_make') == 'BMW':
             bmw_and_audi.append(car)
     return bmw_and_audi
 
