@@ -97,7 +97,7 @@ def main():
     print("\n=== Challenge 6 ===")
     cars = find_bmw_and_audi(inventory)
     for car in cars:
-        print("Car Make: {}, Car Model: {}".format(car["car_make"], car["model"]))
+        print("Car Make: {}, Car Model: {}".format(car["car_make"], car["car_model"]))
 
 
 # Example 1 for loop:
@@ -124,7 +124,7 @@ def main():
 def find_car_by_id(id, cars_list):
     # Loop through each car, inside the car_list 
     for car in cars_list:
-        #check if the id is equal to 33
+        # Check if the id is equal to 33
         if car.get("id") == 33:
             return f"Car {car.get('id')} is a {car.get('car_year')} {car.get('car_make')} {car.get('car_model')}"
 
@@ -134,9 +134,13 @@ def find_car_by_id(id, cars_list):
 # What is the make and model of the last car in the inventory?
 # return a string with the make and model
 def get_last_car(cars_list):
+    # Get the length of the list, and turn it into a index using -1
     last_index = len(cars_list) - 1
+    # Use the index for getting the last pos
     last_car = cars_list[last_index]
+    # Format the String
     last_car_formated_string = f"{last_car.get('car_make')} {last_car.get('car_model')}"
+    
     return last_car_formated_string
 
 
@@ -144,32 +148,39 @@ def get_last_car(cars_list):
 # The marketing team wants the car models listed alphabetically on the website.
 # Sort all the car model names into alphabetical order and return the result
 def sort_cars(cars_list):
-    
-    car_models = []
-    car_models_sorted = []
+    car_models = sorted(cars_list, key=lambda car: car['car_model'])
+    return car_models
 
 
 # ==== Challenge 4 ====
 # The accounting team needs all the years from every car on the lot.
 # Create a new array from the dealer data containing only the car years and return the result.
 def get_car_years(cars_list):
-    car_years = []
+    only_years = [car.get('car_year') for car in cars_list]
+    car_years = sorted(only_years)
+    return car_years
 
 
 # ==== Challenge 5 ====
 # The car lot manager needs to find out how many cars are older than the year 2000.
-# Using the carYears array you just created, find out how many cars were made
+# Using the car_years array you just created, find out how many cars were made
 # before the year 2000 by populating the list old_cars and return the result
 def get_old_cars(cars_list):
     old_cars = []
-
+    for car in cars_list:
+        if car.get('car_year') < 2000:
+            old_cars.append(car)
+    return old_cars
 
 # ==== Challenge 6 ====
 # A buyer is interested in seeing only BMW and Audi cars within the inventory.
 # Return an array that only contains BMW and Audi cars
 def find_bmw_and_audi(cars_list):
-
     bmw_and_audi = []
+    for car in cars_list:
+        if car.get('car_make') == 'Audi' or 'BMW':
+            bmw_and_audi.append(car)
+    return bmw_and_audi
 
 
 # === STRETCH ====
