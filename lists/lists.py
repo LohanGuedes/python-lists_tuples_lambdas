@@ -122,8 +122,11 @@ def main():
 # Help the dealer find out which car has an id of 33 by returning
 # a string with the car's year, make, and model in the string
 def find_car_by_id(id, cars_list):
-
-    return f"Car **car id goes here** is a *car year goes here* *car make goes here* *car model goes here*"
+    # Loop through each car, inside the car_list 
+    for car in cars_list:
+        #check if the id is equal to 33
+        if car.get("id") == 33:
+            return f"Car {car.get('id')} is a {car.get('car_year')} {car.get('car_make')} {car.get('car_model')}"
 
 
 # ==== Challenge 2 ====
@@ -131,14 +134,17 @@ def find_car_by_id(id, cars_list):
 # What is the make and model of the last car in the inventory?
 # return a string with the make and model
 def get_last_car(cars_list):
-    last_car = 0
+    last_index = len(cars_list) - 1
+    last_car = cars_list[last_index]
+    last_car_formated_string = f"{last_car.get('car_make')} {last_car.get('car_model')}"
+    return last_car_formated_string
 
 
 # ==== Challenge 3 ====
 # The marketing team wants the car models listed alphabetically on the website.
 # Sort all the car model names into alphabetical order and return the result
 def sort_cars(cars_list):
-
+    
     car_models = []
     car_models_sorted = []
 
