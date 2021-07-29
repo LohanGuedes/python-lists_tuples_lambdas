@@ -13,7 +13,6 @@ def main():
 
     # === **Scoll down to challenege 1 ** ===
     intern_tuples = create_intern_tuples(interns)
-
     # ==== Challenge 2: Reading Tuple Data ====
     # Once your tuples are created, print out the following requests from HR :
     #   - Mitzi's name
@@ -42,7 +41,11 @@ def main():
 # Example format of an intern dict: {"id": 1, "email": "mmelloy0@psu.edu", "name": "Mitzi", "gender": "F"}
 def create_intern_tuples(interns_list):
     interns = []
-
+    Intern = namedtuple('Intern', ['id', 'email', 'name', 'gender'])
+    for intern in interns_list:
+        new_tuple = Intern(intern.get('id'), intern.get('email'), intern.get('name'), intern.get('gender'))
+        interns.append(new_tuple)
+        print(new_tuple)
     return interns
 
 
@@ -69,4 +72,5 @@ def create_named_tuples(interns_list):
 
 if __name__ == "__main__":
     # call your main function
+    main()
     pass
