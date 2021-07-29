@@ -34,7 +34,7 @@ In order to complete the problems you will need to use loops, conditional logic 
 
 - [x] Please fork and clone this repository. Regularly commit and push your code as appropriate.
 - [x] Before you begin work, get familiar with the project and each of the files.
-- [ ] Complete each of the problem sets in the `Lists, Tuples & Lambdas` folders.
+- [x] Complete each of the problem sets in the `Lists, Tuples & Lambdas` folders.
   - Some of the problem sets have test files, if you would like to test your code against the unit tests run `python <test file>.py` or `python3 <test file>.py`
 
 > **Running Tests**
