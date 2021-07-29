@@ -15,17 +15,22 @@ def main():
     intern_tuples = create_intern_tuples(interns)
     # ==== Challenge 2: Reading Tuple Data ====
     # Once your tuples are created, print out the following requests from HR :
-    #
+
+    # Naming variables for better reading and cleaner code.
+    id = 0
+    email = 1
+    name = 2
+    gender = 3
     #   - Mitzi's name
-    print(intern_tuples[0][2])
+    print(intern_tuples[0][name])
     #   - Kennan's ID
-    print(intern_tuples[1][0])
+    print(intern_tuples[1][id])
     #   - Keven's email
-    print(intern_tuples[2][1])
+    print(intern_tuples[2][email])
     #   - Gannie's name
-    print(intern_tuples[3][2])
+    print(intern_tuples[3][name])
     #   - Antonietta's Gender
-    print(intern_tuples[4][1])
+    print(intern_tuples[4][gender])
     # === **Scroll down to challenge 3** ===
     intern_named_tuples = create_named_tuples(interns)
 
